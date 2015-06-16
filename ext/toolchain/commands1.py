@@ -441,6 +441,8 @@ class InternalCommands:
 
 		cmake_args += " -DOSX_TARGET_MAJOR=" + macSdkMatch.group(1)
 		cmake_args += " -DOSX_TARGET_MINOR=" + macSdkMatch.group(2)
+
+		cmake_args += " -DCMAKE_MACOSX_RPATH=ON"
 		
 		# if not visual studio, use parent dir
 		sourceDir = generator.getSourceDir()
