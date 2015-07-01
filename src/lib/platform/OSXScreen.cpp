@@ -1984,6 +1984,9 @@ OSXScreen::handleCGInputEvent(CGEventTapProxy proxy,
 			// we don't return the event. This should be harmless,
 			// but might register as slight movement to other apps
 			// on the system. It hasn't been a problem before, though.
+			if(!screen->m_isOnScreen ) {
+				CGEventSetType(event, kCGEventMouseMoved);
+			}
 			return event;
 			break;
 		case kCGEventScrollWheel:
